@@ -1,5 +1,6 @@
-#AuthZ Playground
+# AuthZ Playground
 
-What is this about?
-See slides and a story.
+## What is this about?
+
+Read the [story](story.adoc).
 

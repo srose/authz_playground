@@ -1,0 +1,21 @@
+services:
+  example-opa:
+    image: openpolicyagent/opa:0.46.1-rootless
+    command:
+      - run
+      - --server
+      - --set
+      - "decision_logs.console=true"
+    ports:
+      - "8181:8181"
+      - "8182:8182"
+    networks:
+      - authz-playground-net
+
+#nginx service for bundles?
+
+networks:
+  authz-playground-net:
+    name: authz-playground-net
+    external: true
+

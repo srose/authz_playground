@@ -1,0 +1,34 @@
+= Authorization Playground Services
+:sectnums:
+
+Keep all parts but *authorization* as simple as possible!
+Main focus is *authorization*.
+
+Everything else is *NOT* from interest!
+
+== Auxiliaries
+Helper applications:
+
+include::./_aux/aux.adoc[leveloffset=+1]
+
+== Authorization Services
+
+Each authorization service will contain the following subsections:
+
+|===
+|Subsection |Description
+
+|Run
+|How to start docker based setup to work with the component
+|Links
+|Collection of VERY useful links
+
+|===
+
+include::./opa/authz_provider_opa.adoc[leveloffset=+2]
+
+include::./authzed/authz_provider_authzed.adoc[leveloffset=+2]
+
+include::./openfga/authz_provider_openfga.adoc[leveloffset=+2]
+
+

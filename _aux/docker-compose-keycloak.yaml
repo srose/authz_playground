@@ -1,0 +1,40 @@
+services:
+  example-keycloak:
+    image: quay.io/keycloak/keycloak:20.0.1
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+      # Enable remote debugging
+      DEBUG: "true"
+      DEBUG_PORT: "*:8787"
+      JAVA_TOOL_OPTIONS: "-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8790 -Dcom.sun.management.jmxremote.local.only=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -XX:FlightRecorderOptions=stackdepth=256"
+    mem_limit: 1024m
+    mem_reservation: 1024m
+    cpus: 2
+    command:
+      - "--verbose"
+      - "start"
+      - "--http-enabled=true"
+      - "--http-port=8080"
+      - "--hostname-url=http://localhost:8080/"
+      - "--hostname-strict=false"
+      - "--metrics-enabled=true"
+      - "--health-enabled=true"
+      - "--cache=local"
+      - "--proxy=passthrough"
+      - "--log-console-format='%d{HH:mm:ss} (%t) %s%e%n'"
+    ports:
+      - "8080:8080"
+      - "127.0.0.1:8790:8790"
+      - "127.0.0.1:8787:8787"
+    volumes:
+      - ./run/keycloakx/data:/opt/keycloak/data:z
+      - ./run/keycloakx/logs:/opt/keycloak/logs:z
+      - ./run/keycloakx/perf:/opt/keycloak/perf:z
+    networks:
+      - authz-playground-net
+
+networks:
+  authz-playground-net:
+    name: authz-playground-net
+    external: true

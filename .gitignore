@@ -1,0 +1,6 @@
+/.idea/
+**/_apps/**/*
+**/run/**/*
+**/sources/**/*
+**/bundles/**/*
+**/stores_and_models/**/*

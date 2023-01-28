@@ -1,0 +1,48 @@
+= Story
+:sectnums:
+
+== Motivation
+Applications, API-Services that want to do *authorization*...
+
+1. link:./_apps/app-java/[Commandline-App]
+2. link:./_apps/backend-api-springboot3[SpringBoot]
+3. link:./_apps/backend-api-quarkus[Quarkus]
+4. link:./_apps/backend-api-node[Node]
+
+
+== Authorization? Clarify: what is authorization...
+Using OAuth2?
+
+Not really, so even just checking for a token is somehow authorization?
+
+I use the authorization header !!!
+
+UMA?
+
+== I dont have a problem/Thats just the way we used to do it since foreever/Pragmatic: Just do what is necessary...
+Seen in code?
+- Check JWT, check context, check resource with if,if,if
+- Framework agnostic stuff: Roles/Annotations
+- There is always something extra beside we do X?
+
+=== Downsides
+Not reusable
+Not testable in isolation?
+...
+Lets see what serious authorization has a lot more requirements?
+(Is this a pattern? Ah I think know enough until i have a closer look?)
+
+== Data? Model? Functional requirements
+RBAC?
+
+== Examples: secure an app using an external service...
+
+TODO Setup the required link:./services.adoc[services].
+
+=== Example 1
+
+== Specials
+- Combining OPA and OpenFGA/Authzed
+- Keycloak OPA Integration
+- Keycloak OpenFGA Integration
+- Keycloak Authez Integration

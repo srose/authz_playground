@@ -1,0 +1,28 @@
+services:
+
+  example-openfga-migrate:
+    image: openfga/openfga:latest
+    container_name: migrate-openfga
+    command: migrate --datastore-engine postgres --datastore-uri 'postgres://postgres:password@postgres:5432/playground-openfga?sslmode=disable'
+    networks:
+      - authz-playground-net
+
+  example-openfga:
+    depends_on:
+      example-openfga-migrate:
+        condition: service_completed_successfully
+    image: openfga/openfga:latest
+    container_name: openfga
+    command: run --http-addr 0.0.0.0:9080 --datastore-engine postgres --datastore-uri 'postgres://postgres:password@postgres:5432/postgres?sslmode=disable'
+    networks:
+      - authz-playground-net
+    ports:
+      - "9080:9080"
+      - "3000:3000"
+    networks:
+      - authz-playground-net
+
+networks:
+  authz-playground-net:
+    name: authz-playground-net
+    external: true

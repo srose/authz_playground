@@ -1,0 +1,9 @@
+= Authzed
+
+[source]
+----
+docker-compose -f docker-compose-authzed.yaml up
+----
+
+== Links
+https://github.com/authzed/spicedb/issues/158

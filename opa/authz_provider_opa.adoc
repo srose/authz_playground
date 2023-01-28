@@ -1,0 +1,40 @@
+= Open Policy Agent
+
+See examples in bundles-folder.
+
+== Run
+
+[source]
+----
+docker-compose -f docker-compose-opa.yaml up
+----
+
+== Links
+
+.Links
+|===
+|Description |Link
+
+|Open Policy Agent
+|https://www.openpolicyagent.org/
+
+|Playground for Rego policies
+|https://play.openpolicyagent.org/
+
+|OPA Rest-API
+|https://www.openpolicyagent.org/docs/latest/rest-api/
+
+|OPA comparison to other systems with some nice examples
+|https://www.openpolicyagent.org/docs/latest/comparison-to-other-systems/
+
+|Link collection on OPA
+|https://github.com/anderseknert/awesome-opa
+
+|Nice example with OPA
+|https://github.com/jatinvaidya/api-fga-auth0-opa
+
+|Integrate an AuthZ call from Open Policy Agent to OpenFGA
+|https://github.com/thomasdarimont/custom-opa-openfga
+
+|===
+

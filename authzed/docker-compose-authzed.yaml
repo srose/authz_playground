@@ -1,0 +1,28 @@
+services:
+  example-authzed-migrate:
+    image: authzed/spicedb:v1.15.0
+    container_name: migrate-spicedb
+    command:
+    - migrate
+    - head
+    - --datastore-engine=postgres
+    - --datastore-conn-uri=postgres://postgres:password@postgres:5432/playground-authzed?sslmode=disable
+    networks:
+      - authz-playground-net
+  example-authzed:
+    image: authzed/spicedb:v1.15.0
+    command:
+      - serve
+      - --grpc-preshared-key=somerandomkeyhere
+      - --datastore-engine=postgres
+      - --datastore-conn-uri=postgres://postgres:password@postgres:5432/playground-authzed?sslmode=disable
+    ports:
+      - "50051:50051"
+    networks:
+      - authz-playground-net
+
+networks:
+  authz-playground-net:
+    name: authz-playground-net
+    external: true
+

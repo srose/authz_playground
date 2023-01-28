@@ -1,0 +1,56 @@
+= Open Fine Graned (OpenFGA)
+
+== Configuration
+
+OpenFGA uses the idea from googles Zanzibar paper.
+
+First, an authorization model is required.
+This model is organized within a store, thus multiple models can be hosted by one openfga-instance.
+See examples in stores_and_models-folder.
+
+Beside the authorization model, the existing relations are required to check requests.
+An instance of an existing relation is called tuple.
+These are maintained through requests.
+
+The request-model and the response-model is defined by OpenFGA.
+
+== Run
+[source]
+----
+docker-compose -f docker-compose-openfga.yaml up
+----
+
+== Links
+
+.Links OpenFGA
+|===
+|Description |Link
+
+|OpenFGA
+|https://openfga.dev/
+
+|All OpenFGA configuration options
+|https://github.com/openfga/openfga/blob/main/.config-schema.json
+
+|OpenFGA Service Definition OpenAPI
+|https://openfga.dev/api/service
+
+|OpenFGA Samples
+|https://github.com/openfga/sample-stores
+
+|Demo for OpenFGA and Keycloak Integration
+|https://embesozzi.medium.com/keycloak-integration-with-openfga-based-on-zanzibar-for-fine-grained-authorization-at-scale-d3376de00f9a
+
+|===
+
+.Links SpiceDB
+|===
+|Description |Link
+
+|Documentation SpiceDB
+|https://docs.authzed.com/
+
+|Playground for SpiceDB
+|https://play.authzed.com/relationships
+
+|===
